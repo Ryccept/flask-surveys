@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block title %} Surveys! {% endblock %} {% block
+content %}
+
+<h2>Optional Surveys:</h2>
+{% if surveys %} {%for key, survey in surveys.items() %}
+<form id="{{survey.title}}" method="POST" action="{{key}}/questions/0">
+  <h3>{{survey.title}}</h3>
+  <p>{{survey.instructions}}</p>
+  <button>Start!</button>
+</form>
+<br />
+{% endfor %} {%endif%} {% endblock %}

@@ -1,6 +1,16 @@
 {% extends 'base.html' %} {% block title %} Thank You! {% endblock %} {% block
 content %}
 <h2>Survey complete, thank you!</h2>
+
+<h4>
+  These were your responses!:
+  <ol>
+    {% for response in session['responses'] %}
+    <li>{{response}}</li>
+    {% endfor %}
+  </ol>
+</h4>
+
 <form id="return" method="GET" action="/">
   <button>Return Back To Home Page!</button>
 </form>
